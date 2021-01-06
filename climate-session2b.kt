@@ -33,7 +33,6 @@ fun topFiveNumbers(number : Int, numbers : MutableList<Int>) : List<Int> {
     // Note: this don't work if the numbers list is not ordered from the beginning
     var positionNotFound = true
     var index = 0
-    var position = 0
     while((index < numbers.size) and (positionNotFound)) {
         if (numbers[index] > number) {
             numbers.add(index, number)
