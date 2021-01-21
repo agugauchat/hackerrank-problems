@@ -71,3 +71,53 @@ fun testFunctionMustReturnAllElementsIfThereIsLessOfFive() : Boolean {
     val testNumbers = mutableListOf<Int>()
     return (topFiveNumbers(6, testNumbers).size == 1)
 }
+
+
+sealed class Units {
+    String mm : Unit
+    String cm : Unit
+    String m : Unit
+    String km : Unit
+    String inch : Unit
+    String ft : Unit
+    String mi : Unit
+}
+
+val metricUnits = listOf("mm", "cm", "m", "km")
+val imperialUnits = listOf("inch", "ft", "mi")
+
+
+/*sealed class ImperialUnit {
+  Double inch : Unit
+  Double ft : Unit
+  Double mi : Unit
+}*/
+
+
+fun main() {
+    val leftValue = 3.0
+    val leftUnits = "cm"
+    val rightUnits = "inch"
+    val rightValue = convert(leftValue, leftUnits, rightUnits)
+
+    println("${leftValue} ${leftUnits} = ${rightValue} ${rightUnits}" )
+}
+
+fun convert(leftValue: Double, leftUnits: String, rightUnits: String): Double {
+    if ((leftUnits in metricUnit) && (rightUnits in metricUnit)) {
+        return 1
+    }
+
+    return 1.1
+}
+
+fun toStandar(value: Double, unit: Units): Double {
+    when (unit) {
+
+    }
+    return value * 2.54
+}
+
+fun InToCm(value: Double): Double {
+    return value * 2.54
+}
